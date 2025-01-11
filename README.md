@@ -22,46 +22,51 @@ A streamlined Laravel starter template featuring SQLite database, Alpine.js for 
 - Node.js & NPM
 - SQLite
 
-## Quick Start
+## How to Use This Template for Your Laravel Application
 
-1. Clone this repository:
+1. Create a new private repository on GitHub for your project
+
+2. Clone this template repository to create your new project:
 ```bash
-git clone [repository-url]
-cd [project-name]
+# Clone the template repository
+git clone <template-repo-url> <new-project-name>
+cd <new-project-name>
+
+# Remove the original remote and add your new private repository
+git remote remove origin
+git remote add origin <your-new-private-repo-url>
 ```
 
-2. Install PHP dependencies:
+3. Install dependencies and set up the environment:
 ```bash
-composer install
-```
-
-3. Install Node dependencies:
-```bash
-npm install
-```
-
-4. Set up environment file:
-```bash
+# Copy environment file
 cp .env.example .env
+
+# Install dependencies
+composer install
+npm install
+
+# Generate application key
 php artisan key:generate
-```
 
-5. Create SQLite database:
-```bash
+# Create SQLite database
 touch database/database.sqlite
-```
 
-6. Run migrations:
-```bash
+# Run migrations
 php artisan migrate
 ```
 
-7. Start development servers:
+4. Push to your new private repository:
 ```bash
-# Terminal 1: Laravel server
+git push -u origin main
+```
+
+5. Start development:
+```bash
+# Terminal 1: Start Laravel server
 php artisan serve
 
-# Terminal 2: Vite development server
+# Terminal 2: Start Vite development server
 npm run dev
 ```
 
